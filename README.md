@@ -37,10 +37,10 @@ Each post in `posts.json`:
 
 Posts with no text (image/video-only, or bare reposts) are dropped. Media is not kept.
 
-## The game: "When Did He Say It: Iran Edition"
+## The game: "When Did Trump Say It: Iran Edition"
 
 A static site in `docs/` (plain HTML/CSS/JS, no build step). Each round deals 5
-random Iran posts at least 14 days apart; the player sorts them oldest to
+random Iran deal & ceasefire posts at least 14 days apart; the player sorts them oldest to
 newest and is scored on how many of the 10 pairs are in the right order.
 
 To rebuild the data and play locally:
@@ -51,5 +51,11 @@ cd docs && python3 -m http.server 8765   # then open http://localhost:8765
 ```
 
 `build_game_data.py` drops reposts, posts containing links (URLs can reveal
-the date), very short posts, and duplicate texts. `docs/` is the folder GitHub Pages serves (Settings → Pages →
+the date), very short posts, image headers, and duplicates (including corrected
+re-posts, keeping the later version).
+
+Only posts about peace deals, the promise of one, threats if no deal is made,
+or ceasefires are used. That set is hand-labeled in
+`data/labels/iran_deals.json`; new posts are not labeled automatically, so
+review and add IDs after a data refresh. `docs/` is the folder GitHub Pages serves (Settings → Pages →
 branch, `/docs`).

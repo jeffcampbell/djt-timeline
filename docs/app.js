@@ -3,7 +3,7 @@
 const ROUND_SIZE = 5;
 const MIN_GAP_MS = 14 * 24 * 60 * 60 * 1000;
 const RECENT_LIMIT = 150; // don't repeat posts seen in the last N cards
-const TITLE = "When Did He Say It: Iran Edition";
+const TITLE = "When Did Trump Say It: Iran Edition";
 
 const posts = window.POSTS.map((p) => ({ ...p, time: Date.parse(p.d) }));
 const $ = (id) => document.getElementById(id);
