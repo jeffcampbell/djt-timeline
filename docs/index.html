@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Did He Say It: Iran Edition</title>
+  <meta name="description" content="Five of Donald Trump's Truth Social posts about Iran. Put them in the order he posted them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>When Did He Say It?</h1>
+    <p class="edition">Iran Edition</p>
+  </header>
+
+  <main>
+    <p class="instructions" id="instructions">
+      Put these five Truth Social posts in the order they were posted.
+      <strong>Oldest at the top.</strong> Drag the handles, or use the arrows.
+    </p>
+
+    <div class="result" id="result" hidden>
+      <p class="score" id="score"></p>
+      <p class="score-detail" id="score-detail"></p>
+      <p class="squares" id="squares" aria-hidden="true"></p>
+    </div>
+
+    <p class="end-label">Oldest</p>
+    <ol class="cards" id="cards"></ol>
+    <p class="end-label">Newest</p>
+
+    <div class="actions">
+      <button class="primary" id="submit">Lock it in</button>
+      <button id="show-correct" hidden>Show correct order</button>
+      <button id="copy" hidden>Copy result</button>
+      <button class="primary" id="next" hidden>Next round</button>
+    </div>
+    <p class="tally" id="tally" hidden></p>
+    <p class="sr-only" id="live" aria-live="polite"></p>
+  </main>
+
+  <footer>
+    Posts come from <a href="https://ix.cnn.io/data/truth-social/truth_archive.json">CNN's Truth Social archive</a>.
+    Each post in a round is at least two weeks from the others. Reposts and posts with links are left out. After you lock in, each post links to the original.
+  </footer>
+
+  <template id="card-template">
+    <li class="slot">
+      <div class="card">
+        <span class="handle" aria-hidden="true">⠿</span>
+        <div class="body">
+          <p class="text"></p>
+          <button class="more" hidden>Show more</button>
+        </div>
+        <div class="move">
+          <button class="up" aria-label="Move up">▲</button>
+          <button class="down" aria-label="Move down">▼</button>
+        </div>
+      </div>
+      <div class="verdict">
+        <span class="badge"></span>
+        <span class="label"></span>
+        <a class="date" target="_blank" rel="noopener"></a>
+      </div>
+    </li>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+  <script src="posts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
