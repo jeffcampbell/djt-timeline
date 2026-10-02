@@ -162,7 +162,7 @@ function submit() {
 function countUp(el, value, total) {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let n = reduced ? value : 0;
-  const show = () => (el.textContent = n === total ? "Perfect!" : `${n}/${total}`);
+  const show = () => (el.textContent = n === total ? "You did it! Yay?" : `${n}/${total}`);
   show();
   const timer = setInterval(() => {
     if (n >= value) return clearInterval(timer);
